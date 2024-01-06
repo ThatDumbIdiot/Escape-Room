@@ -6,6 +6,32 @@ inventory = ["nail file", "metal rod"]
 password = ["→", "↑", "←", "↓"]
 input_password = []
 
+def label():
+    label_4.place_forget()
+    label_5.place_forget()
+    label_6.place_forget()
+    label_7.place_forget()
+    label_8.place_forget()
+    label_9.place_forget()
+    label_10.place_forget()
+    label_11.place_forget()
+    label_12.place_forget()
+    label_13.place_forget()
+    label_14.place_forget()
+    label_15.place_forget()
+    label_16.place_forget()
+    label_17.place_forget()
+    label_18.place_forget()
+    label_19.place_forget()
+    label_20.place_forget()
+    label_21.place_forget()
+    label_22.place_forget()
+    label_24.place_forget()
+    button_map_2.pack_forget()
+    button_map_3.pack_forget()
+    button_map_4.pack_forget()
+
+
 #Typing animation(Dont touch unless Your Chat Gpt)
 
 def type_text(text, label, interval=50, step=1):
@@ -19,25 +45,7 @@ def type_text(text, label, interval=50, step=1):
 def int1():
     global inventory
     if "wrench" in inventory:
-        label_4.place_forget()
-        label_5.place_forget()
-        label_6.place_forget()
-        label_7.place_forget()
-        label_8.place_forget()
-        label_9.place_forget()
-        label_10.place_forget()
-        label_11.place_forget()
-        label_12.place_forget()
-        label_13.place_forget()
-        label_14.place_forget()
-        label_15.place_forget()
-        label_16.place_forget()
-        label_17.place_forget()
-        label_18.place_forget()
-        label_19.place_forget()
-        label_20.place_forget()
-        label_21.place_forget()
-        label_22.place_forget()
+        label()
         ###
         text_12 = "You look at the pillow and notice some drawings on them"
         label_14.place(x = 175, y = 10)
@@ -51,25 +59,7 @@ def int1():
         inventory.append("3185")
         btn_5.config(state = tk.DISABLED)
     else:
-        label_4.place_forget()
-        label_5.place_forget()
-        label_6.place_forget()
-        label_7.place_forget()
-        label_8.place_forget()
-        label_9.place_forget()
-        label_10.place_forget()
-        label_11.place_forget()
-        label_12.place_forget()
-        label_13.place_forget()
-        label_14.place_forget()
-        label_15.place_forget()
-        label_16.place_forget()
-        label_17.place_forget()
-        label_18.place_forget()
-        label_19.place_forget()
-        label_20.place_forget()
-        label_21.place_forget()
-        label_22.place_forget()
+        label()
         ###
         text_12 = "You look under the bed and notice something shiny"
         label_14.place(x = 175, y = 10)
@@ -86,25 +76,7 @@ def int2():
     if "Nail File" in inventory:
         pass
     else:
-        label_4.place_forget()
-        label_5.place_forget()
-        label_6.place_forget()
-        label_7.place_forget()
-        label_8.place_forget()
-        label_9.place_forget()
-        label_10.place_forget()
-        label_11.place_forget()
-        label_12.place_forget()
-        label_13.place_forget()
-        label_14.place_forget()
-        label_15.place_forget()
-        label_16.place_forget()
-        label_17.place_forget()
-        label_18.place_forget()
-        label_19.place_forget()
-        label_20.place_forget()
-        label_21.place_forget()
-        label_22.place_forget()
+        label()
         ###
         text_14 = "You moved the brick and found a nail file underneath"
         label_16.place(x=175, y=10)
@@ -183,25 +155,7 @@ def int3():
 
         root_1.mainloop()
     else:
-        label_4.place_forget()
-        label_5.place_forget()
-        label_6.place_forget()
-        label_7.place_forget()
-        label_8.place_forget()
-        label_9.place_forget()
-        label_10.place_forget()
-        label_11.place_forget()
-        label_12.place_forget()
-        label_13.place_forget()
-        label_14.place_forget()
-        label_15.place_forget()
-        label_16.place_forget()
-        label_17.place_forget()
-        label_18.place_forget()
-        label_19.place_forget()
-        label_20.place_forget()
-        label_21.place_forget()
-        label_22.place_forget()
+        label()
             
         ###
         text_20 = "Nothings working here"
@@ -242,7 +196,12 @@ def q():
         root.destroy()
 #Hints
 def P_hint():
-    pass
+    if messagebox.askyesno("Hint", "Would You like a hint?"):
+        label()
+
+        text_22 = "Look forward and try inspecting it"
+        label_24.place(x = 200, y = 10)
+        type_text(text_22, label_24)
 
 #Start Screen
 def start():
@@ -251,10 +210,13 @@ def start():
 
     label_2.pack()
     button_prison.pack()
+    button_map_2.pack()
+    button_map_3.pack()
+    button_map_4.pack()
     
 #Prison Escape
 def prison_map():
-
+    label()
     #Loading
     label_2.pack_forget()
     button_prison.pack_forget()
@@ -304,25 +266,7 @@ def prison_map():
     
 def P_left():
     global inventory
-    label_4.place_forget()
-    label_5.place_forget()
-    label_6.place_forget()
-    label_7.place_forget()
-    label_8.place_forget()
-    label_9.place_forget()
-    label_10.place_forget()
-    label_11.place_forget()
-    label_12.place_forget()
-    label_13.place_forget()
-    label_14.place_forget()
-    label_15.place_forget()
-    label_16.place_forget()
-    label_17.place_forget()
-    label_18.place_forget()
-    label_19.place_forget()
-    label_20.place_forget()
-    label_21.place_forget()
-    label_22.place_forget()
+    label()
     #
     back.place_forget()
     back_down.place_forget()
@@ -333,6 +277,7 @@ def P_left():
     btn_6.config(state = tk.DISABLED)
     btn_7.config(state = tk.DISABLED)
     btn_8.config(state = tk.DISABLED)
+    
     ###
     back_left.place(x=0, y=0)
     #
@@ -349,25 +294,7 @@ def P_left():
     else:
         pass
 def P_forward():
-    label_4.place_forget()
-    label_5.place_forget()
-    label_6.place_forget()
-    label_7.place_forget()
-    label_8.place_forget()
-    label_9.place_forget()
-    label_10.place_forget()
-    label_11.place_forget()
-    label_12.place_forget()
-    label_13.place_forget()
-    label_14.place_forget()
-    label_15.place_forget()
-    label_16.place_forget()
-    label_17.place_forget()
-    label_18.place_forget()
-    label_19.place_forget()
-    label_20.place_forget()
-    label_21.place_forget()
-    label_22.place_forget()
+    label()
     #
     back.place_forget()
     back_down.place_forget()
@@ -391,25 +318,7 @@ def P_forward():
     ###
     btn_5.config(state = tk.NORMAL)
 def P_down():
-    label_4.place_forget()
-    label_5.place_forget()
-    label_6.place_forget()
-    label_7.place_forget()
-    label_8.place_forget()
-    label_9.place_forget()
-    label_10.place_forget()
-    label_11.place_forget()
-    label_12.place_forget()
-    label_13.place_forget()
-    label_14.place_forget()
-    label_15.place_forget()
-    label_16.place_forget()
-    label_17.place_forget()
-    label_18.place_forget()
-    label_19.place_forget()
-    label_20.place_forget()
-    label_21.place_forget()
-    label_22.place_forget()
+    label()
     #
     back.place_forget()
     back_down.place_forget()
@@ -430,25 +339,7 @@ def P_down():
     ###
     btn_6.config(state = tk.NORMAL)
 def P_right():
-    label_4.place_forget()
-    label_5.place_forget()
-    label_6.place_forget()
-    label_7.place_forget()
-    label_8.place_forget()
-    label_9.place_forget()
-    label_10.place_forget()
-    label_11.place_forget()
-    label_12.place_forget()
-    label_13.place_forget()
-    label_14.place_forget()
-    label_15.place_forget()
-    label_16.place_forget()
-    label_17.place_forget()
-    label_18.place_forget()
-    label_19.place_forget()
-    label_20.place_forget()
-    label_21.place_forget()
-    label_22.place_forget()
+    label()
     #
     back.place_forget()
     back_down.place_forget()
@@ -500,6 +391,9 @@ button_1.pack(pady = 150)
 #Map options
 image = tk.PhotoImage(file='prison.png')
 button_prison = tk.Button(root, image=image, width = 200, height = 100, command = prison_map)
+button_map_2 = tk.Button(root, text = "Coming Soon...", font = ("Arial", 20) , width = 15, height = 2)
+button_map_3 = tk.Button(root, text = "Coming Soon...", font = ("Arial", 20) , width = 15, height = 2)
+button_map_4 = tk.Button(root, text = "Coming Soon...", font = ("Arial", 20) , width = 15, height = 2)
 label_2 = tk.Label(root, text = "Choose The Map", font = ("Arial", 30), bg = "#333333", fg = "White")
 
 #Text Animation
@@ -523,6 +417,7 @@ label_19 = tk.Label(root, font=("Arial", 16), bg = "#d2d6d9", fg = "Black")
 label_20 = tk.Label(root, font=("Arial", 16), bg = "#d2d6d9", fg = "Black")
 label_21 = tk.Label(root, font=("Arial", 16), bg = "#d2d6d9", fg = "Black")
 label_22 = tk.Label(root, font=("Arial", 16), bg = "#d2d6d9", fg = "Black")
+label_24 = tk.Label(root, font=("Arial", 16), bg = "#d2d6d9", fg = "Black")
 
 #Directional Buttons
 button_f = tk.Button(root, text = "Forward", font=("Arial", 16), bg = "#333333", fg = "White", command = P_forward)
@@ -548,3 +443,5 @@ btn_7 = tk.Button(root, text = "  Inspect  ",  font=("Arial", 16), command = int
 btn_8 = tk.Button(root, text = "    Use    ",  font=("Arial", 16), command = int4, state = tk.DISABLED)
 
 root.mainloop()
+
+

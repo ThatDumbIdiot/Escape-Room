@@ -14,6 +14,40 @@ def toggle_pause():
     else:
         mixer.music.unpause()
         button_music.config(text="Music: On")
+        
+#Typing animation(Dont touch unless Your Chat Gpt)
+def type_text(text, label, interval=50, step=1):
+    for i in range(0, len(text) + 1, step):
+        partial_text = text[:i]
+        label.config(text=partial_text)
+        root.update()
+        root.after(interval)
+        
+#Start Screen
+def start():
+    label_1.pack_forget()
+    button_1.pack_forget()
+
+    label_2.pack()
+    button_prison.pack()
+    button_map_2.pack()
+    button_map_3.pack()
+    button_map_4.pack()
+    button_quit.place(x=10, y=480)
+    button_music.place(x = 140, y = 480)
+    # Background music
+    music_file = "escape_room.mp3" # Replace with the path to your background music file
+    mixer.init()
+    mixer.music.load(music_file)
+    mixer.music.play(-1)
+
+#Quit
+def q():
+    if messagebox.askyesno("Quit?", "Do you want to quit?"):
+        root.destroy()
+
+#Prison Map------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        
 def l():
     global label_4, label_5, label_6, label_7, label_8, label_9, label_10, label_11, label_12
     global label_13, label_14, label_15, label_16, label_17, label_18, label_19, label_20, label_21, label_22, label_24
@@ -44,14 +78,9 @@ def l():
 
 
 
-#Typing animation(Dont touch unless Your Chat Gpt)
 
-def type_text(text, label, interval=50, step=1):
-    for i in range(0, len(text) + 1, step):
-        partial_text = text[:i]
-        label.config(text=partial_text)
-        root.update()
-        root.after(interval)
+
+
         
 #Interactions
 def int1():
@@ -202,10 +231,7 @@ def int4():
 
     
 
-#Quit
-def q():
-    if messagebox.askyesno("Quit?", "Do you want to quit?"):
-        root.destroy()
+
 #Hints
 def P_hint():
     if messagebox.askyesno("Hint", "Would You like a hint?"):
@@ -215,23 +241,7 @@ def P_hint():
         label_24.place(x = 200, y = 10)
         type_text(text_22, label_24)
 
-#Start Screen
-def start():
-    label_1.pack_forget()
-    button_1.pack_forget()
 
-    label_2.pack()
-    button_prison.pack()
-    button_map_2.pack()
-    button_map_3.pack()
-    button_map_4.pack()
-    button_quit.place(x=10, y=480)
-    button_music.place(x = 140, y = 480)
-    # Background music
-    music_file = "escape_room.mp3" # Replace with the path to your background music file
-    mixer.init()
-    mixer.music.load(music_file)
-    mixer.music.play(-1)
     
 #Prison Escape
 def prison_map():
@@ -381,12 +391,55 @@ def P_right():
     type_text(text_10, label_12)
     ###
     btn_7.config(state = tk.NORMAL)
+#End of Prison Map-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def car():
+    pass
+def office():
+    l()
+    
+    label_2.pack_forget()
+    button_prison.pack_forget()
+
+    root.after(100, lambda: label_3.pack(pady=150))
+
+    text_1 = "Loading Map............"
+    type_text(text_1, label_3)
+
+    root.after(100, lambda: label_3.pack_forget())
+
+    #Storyline
+
+    root.after(1, lambda: label_4.place(x = 200, y = 10))
+
+    text_2 = "You stayed up late working in the office"
+    type_text(text_2, label_4)
+def spaceship():
+    pass
+
 
 #GUI
 root = tk.Tk()
 root.configure(bg="#333333")
 root.geometry("800x529")
 root.title("Escape Room")
+
+###Start Screen
+label_1 = tk.Label(root, text = "Welcome to the Escape Room!!!", font = ("Arial", 30), bg = "#333333", fg = "White")
+label_1.pack()
+
+button_1 = tk.Button(root, text = "Start Game", font = ("Arial", 20), bg = "White", fg = "Black", command = start, width = 15, height = 2)
+button_1.pack(pady = 150)
+
+#Map options
+image = tk.PhotoImage(file='prison.png')
+button_prison = tk.Button(root, image=image, width = 200, height = 100, command = prison_map)
+button_map_2 = tk.Button(root, text = "Coming Soon...", font = ("Arial", 20) , width = 15, height = 2, command = office)
+button_map_3 = tk.Button(root, text = "Coming Soon...", font = ("Arial", 20) , width = 15, height = 2, command = car)
+button_map_4 = tk.Button(root, text = "Coming Soon...", font = ("Arial", 20) , width = 15, height = 2, command = spaceship)
+label_2 = tk.Label(root, text = "Choose The Map", font = ("Arial", 30), bg = "#333333", fg = "White")
+
+#Prison GUI------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 #Background
 bg = PhotoImage(file="prison_1.png")
@@ -400,20 +453,6 @@ back_right = tk.Label(root, image = bg_right)
 bg_left = PhotoImage(file = "door.png")
 back_left = tk.Label(root, image = bg_left)
 
-###Start Screen
-label_1 = tk.Label(root, text = "Welcome to the Escape Room!!!", font = ("Arial", 30), bg = "#333333", fg = "White")
-label_1.pack()
-
-button_1 = tk.Button(root, text = "Start Game", font = ("Arial", 20), bg = "White", fg = "Black", command = start, width = 15, height = 2)
-button_1.pack(pady = 150)
-
-#Map options
-image = tk.PhotoImage(file='prison.png')
-button_prison = tk.Button(root, image=image, width = 200, height = 100, command = prison_map)
-button_map_2 = tk.Button(root, text = "Coming Soon...", font = ("Arial", 20) , width = 15, height = 2)
-button_map_3 = tk.Button(root, text = "Coming Soon...", font = ("Arial", 20) , width = 15, height = 2)
-button_map_4 = tk.Button(root, text = "Coming Soon...", font = ("Arial", 20) , width = 15, height = 2)
-label_2 = tk.Label(root, text = "Choose The Map", font = ("Arial", 30), bg = "#333333", fg = "White")
 
 #Text Animation
 label_3 = tk.Label(root, font= ("Arial", 16), bg = "#333333", fg = "White")
@@ -461,5 +500,13 @@ btn_5 = tk.Button(root, text = "  Inspect  ",  font=("Arial", 16), command = int
 btn_6 = tk.Button(root, text = "  Inspect  ",  font=("Arial", 16), command = int2, state = tk.DISABLED)
 btn_7 = tk.Button(root, text = "  Inspect  ",  font=("Arial", 16), command = int3, state = tk.DISABLED)
 btn_8 = tk.Button(root, text = "    Use    ",  font=("Arial", 16), command = int4, state = tk.DISABLED)
+#End of Prison GUI-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 
 root.mainloop()
+
+
+
